@@ -48,37 +48,37 @@ function Body() {
         <h3>Drapeaux à valider:</h3>
         <input
           type="checkbox"
-          id="vehicle2"
-          name="vehicle2"
-          value="Car"
+          id="irlande"
+          name="irlande"
+          value="irlande"
         ></input>
         Irlande
         <input
           type="checkbox"
-          id="vehicle2"
-          name="vehicle2"
-          value="Car"
+          id="italie"
+          name="italie"
+          value="italie"
         ></input>
         Italie
         <input
           type="checkbox"
-          id="vehicle2"
-          name="vehicle2"
-          value="Car"
+          id="mali"
+          name="mali"
+          value="mali"
         ></input>
         Mali
         <input
           type="checkbox"
-          id="vehicle2"
-          name="vehicle2"
-          value="Car"
+          id="roumanie"
+          name="roumanie"
+          value="roumanie"
         ></input>
         Roumanie
         <input
           type="checkbox"
-          id="vehicle2"
-          name="vehicle2"
-          value="Car"
+          id="france"
+          name="france"
+          value="france"
         ></input>
         France
       </div>
