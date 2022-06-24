@@ -24,6 +24,24 @@
   color: white;
 }
 
+#leftFlags {
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+#middleFlags {
+  background: black;
+  width: 100px;
+  height: 100px;
+}
+
+#rightFlags {
+  background: green;
+  width: 100px;
+  height: 100px;
+}
+
 .App-link {
   color: #61dafb;
 }
