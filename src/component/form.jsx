@@ -14,7 +14,6 @@ class Form extends React.Component {
   }
 
   handleSubmit(event) {
-
     const answer = this.state.value;
     const color = [
       document.getElementById("leftFlags").style.background,
@@ -23,11 +22,11 @@ class Form extends React.Component {
     ];
 
     const lands = [
-        document.getElementById("roumanie"),
-        document.getElementById("irlande"),
-        document.getElementById("italie"),
-        document.getElementById("mali"),
-        document.getElementById("france"),
+      document.getElementById("roumanie"),
+      document.getElementById("irlande"),
+      document.getElementById("italie"),
+      document.getElementById("mali"),
+      document.getElementById("france"),
     ];
 
     if (
@@ -36,7 +35,7 @@ class Form extends React.Component {
       color[2] === "red" &&
       answer === "Roumanie"
     ) {
-      alert("Drapeau validé ! : " + answer);
+      Alert(`Drapeau validé ! : ${answer}`);
       lands[0].checked = true;
     } else if (
       color[0] === "green" &&
@@ -44,35 +43,35 @@ class Form extends React.Component {
       color[2] === "orange" &&
       answer === "Irlande"
     ) {
-      alert("Drapeau validé ! : " + answer);
+      alert(`Drapeau validé ! : ${answer}`);
       lands[1].checked = true;
     } else if (
-        color[0] === "green" &&
-        color[1] === "white" &&
-        color[2] === "red" &&
-        answer === "Italie"
-      ) {
-        alert("Drapeau validé ! : " + answer);
-        lands[2].checked = true;
-      } else if (
-        color[0] === "green" &&
-        color[1] === "yellow" &&
-        color[2] === "red" &&
-        answer === "Mali"
-      ) {
-        alert("Drapeau validé ! : " + answer);
-        lands[3].checked = true;
-      } else if (
-        color[0] === "blue" &&
-        color[1] === "white" &&
-        color[2] === "red" &&
-        answer === "France"
-      ) {
-        alert("Drapeau validé ! : " + answer);
-        lands[4].checked = true;
-      } else {
-        alert('Mauvaise réponse !');
-      }
+      color[0] === "green" &&
+      color[1] === "white" &&
+      color[2] === "red" &&
+      answer === "Italie"
+    ) {
+      alert(`Drapeau validé ! : ${answer}`);
+      lands[2].checked = true;
+    } else if (
+      color[0] === "green" &&
+      color[1] === "yellow" &&
+      color[2] === "red" &&
+      answer === "Mali"
+    ) {
+      alert(`Drapeau validé ! : ${answer}`);
+      lands[3].checked = true;
+    } else if (
+      color[0] === "blue" &&
+      color[1] === "white" &&
+      color[2] === "red" &&
+      answer === "France"
+    ) {
+      alert(`Drapeau validé ! : ${answer}`);
+      lands[4].checked = true;
+    } else {
+      alert("Mauvaise réponse !");
+    }
 
     event.preventDefault();
   }
