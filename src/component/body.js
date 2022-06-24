@@ -32,7 +32,7 @@ function Body() {
   return (
     <div>
       <h1>CheckFlag</h1>
-      <p>Trouve les différents drapeaux nationaux pour les valider.</p>
+      <p>Trouve les différents drapeaux pour les valider.</p>
       <h4>Clique sur les différents boutons pour changer les couleurs 👇​</h4>
       <div className="App-Body-Button">
         <button id="Button-left" onClick={SwapButtonLeft}></button>

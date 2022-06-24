@@ -36,6 +36,12 @@
   height: 100px;
 }
 
+.App-Body-Flag {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 #rightFlags {
   background: green;
   width: 100px;

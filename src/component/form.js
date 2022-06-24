@@ -81,7 +81,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Nom :
+          Pays :
           <input
             id="sendValue"
             type="text"
