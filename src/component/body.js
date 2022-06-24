@@ -5,11 +5,14 @@ function Body() {
   const [middleFlag, setMiddleFlag] = React.useState(false);
   const [rightFlag, setRightFlag] = React.useState(false);
 
+
+
   function SwapButtonLeft() {
     const leftDivFlag = document.getElementById("leftFlags");
     setLeftFlag(!leftFlag) || leftFlag
       ? (leftDivFlag.style.background = "green")
       : (leftDivFlag.style.background = "blue");
+      console.log(document.getElementById('sendValue').value);
   }
 
   function SwapButtonMiddle() {

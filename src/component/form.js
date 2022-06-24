@@ -1,35 +1,83 @@
 import React from "react";
 
-export default function UserForm() {
-  const [landValue, setLandValue] = React.useState({ name: "" });
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
 
-  const handleChange = (event) => {
-    setLandValue({ landValue, [event.target.name]: event.target.value });
-  };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  const handleSubmit = (event) => {
-    // prevents the submit button from refreshing the page
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    const answer = this.state.value;
+    const color = [
+      document.getElementById("leftFlags").style.background,
+      document.getElementById("middleFlags").style.background,
+      document.getElementById("rightFlags").style.background,
+    ];
+
+    if (
+      color[0] === "blue" &&
+      color[1] === "yellow" &&
+      color[2] === "red" &&
+      answer === "Roumanie"
+    ) {
+      alert("Drapeau validé ! : " + answer);
+    } else if (
+      color[0] === "green" &&
+      color[1] === "white" &&
+      color[2] === "orange" &&
+      answer === "Irlande"
+    ) {
+      alert("Drapeau validé ! : " + answer);
+    } else if (
+        color[0] === "green" &&
+        color[1] === "white" &&
+        color[2] === "red" &&
+        answer === "Italie"
+      ) {
+        alert("Drapeau validé ! : " + answer);
+      } else if (
+        color[0] === "green" &&
+        color[1] === "yellow" &&
+        color[2] === "red" &&
+        answer === "Mali"
+      ) {
+        alert("Drapeau validé ! : " + answer);
+      } else if (
+        color[0] === "blue" &&
+        color[1] === "white" &&
+        color[2] === "red" &&
+        answer === "France"
+      ) {
+        alert("Drapeau validé ! : " + answer);
+      } else {
+        alert('Mauvaise réponse !');
+      }
     event.preventDefault();
-    console.log(landValue);
-  };
-  return (
-    <div>
-      <form>
-        <div>
-          <h3>Le pays ?</h3>
-        </div>
-        <div>
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Nom :
           <input
+            id="sendValue"
             type="text"
-            name="land"
-            placeholder=""
-            value={landValue.name}
+            value={this.state.value}
+            onChange={this.handleChange}
           />
-        </div>
-        <div>
-          <button>Submit Contact</button>
-        </div>
+        </label>
+        <input type="submit" value="Envoyer" />
       </form>
-    </div>
-  );
+    );
+  }
 }
+
+export default Form;
