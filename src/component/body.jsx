@@ -1,36 +1,57 @@
 import React from "react";
 
 function Body() {
-  const [leftFlag, setLeftFlag] = React.useState(false);
-  const [middleFlag, setMiddleFlag] = React.useState(false);
-  const [rightFlag, setRightFlag] = React.useState(false);
+  const [leftFlagColor, setLeftFlagColor] = React.useState("");
+  const [middleFlagColor, setMiddleFlagColor] = React.useState("");
+  const [rightFlagColor, setRightFlagColor] = React.useState("");
 
+  const arrayColor = [
+    "blue",
+    "white",
+    "red",
+    "yellow",
+    "green",
+    "orange",
+    "brown",
+    "pink",
+    "black",
+    "orange",
+    "brown",
+    "pink",
+  ];
+
+  const setBackground = (color, setFlagColor, flagColor, divFlag) => {
+    const div = divFlag;
+    const random = Math.floor(Math.random() * color.length);
+    const randomColor = color[random];
+    setFlagColor(randomColor);
+    div.style.background = flagColor;
+  };
   function SwapButtonLeft() {
     const leftDivFlag = document.getElementById("leftFlags");
-    setLeftFlag(!leftFlag) || leftFlag
-      ? (leftDivFlag.style.background = "green")
-      : (leftDivFlag.style.background = "blue");
+    setBackground(arrayColor, setLeftFlagColor, leftFlagColor, leftDivFlag);
   }
 
   function SwapButtonMiddle() {
     const middleDivFlag = document.getElementById("middleFlags");
-    setMiddleFlag(!middleFlag) || middleFlag
-      ? (middleDivFlag.style.background = "white")
-      : (middleDivFlag.style.background = "yellow");
+    setBackground(
+      arrayColor,
+      setMiddleFlagColor,
+      middleFlagColor,
+      middleDivFlag
+    );
   }
 
   function SwapButtonRight() {
     const rightDivFlag = document.getElementById("rightFlags");
-    setRightFlag(!rightFlag) || rightFlag
-      ? (rightDivFlag.style.background = "red")
-      : (rightDivFlag.style.background = "orange");
+    setBackground(arrayColor, setRightFlagColor, rightFlagColor, rightDivFlag);
   }
 
   return (
-    <div>
+    <div className="App-Body">
       <h1>CheckFlag</h1>
       <p>Trouve les différents drapeaux pour les valider.</p>
-      <h4>Clique sur les différents boutons pour changer les couleurs 👇​</h4>
+      <h4>Clique sur les différents boutons pour changer les couleurs👇</h4>
       <div className="App-Body-Button">
         <button id="Button-left" onClick={SwapButtonLeft} />
         <button id="Button-middle" onClick={SwapButtonMiddle} />
@@ -40,19 +61,6 @@ function Body() {
         <div id="leftFlags" />
         <div id="middleFlags" />
         <div id="rightFlags" />
-      </div>
-      <div className="App-Body-Check">
-        <h3>Drapeaux à valider:</h3>
-        <input type="checkbox" id="irlande" name="irlande" value="irlande" />
-        Irlande
-        <input type="checkbox" id="italie" name="italie" value="italie" />
-        Italie
-        <input type="checkbox" id="mali" name="mali" value="mali" />
-        Mali
-        <input type="checkbox" id="roumanie" name="roumanie" value="roumanie" />
-        Roumanie
-        <input type="checkbox" id="france" name="france" value="france" />
-        France
       </div>
     </div>
   );
