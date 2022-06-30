@@ -16,7 +16,7 @@ class Form extends React.Component {
   }
 
   handleSubmit(event) {
-    const ifValid = (colorLeft, colorMiddle, colorRight) => {
+    const ifValid = (colorLeft, colorMiddle, colorRight, land) => {
       const leftColorFlag =
         document.getElementById("leftFlags").style.background;
       const middleColorFlag =
@@ -26,17 +26,22 @@ class Form extends React.Component {
       if (
         colorLeft === leftColorFlag &&
         colorMiddle === middleColorFlag &&
-        colorRight === rightColorFlag
+        colorRight === rightColorFlag &&
+        this.state.value.toLowerCase() === land.toLowerCase()
       ) {
-        return Swal.fire("hello");
+        return Swal.fire({
+          title: "Bonne réponse !",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
       }
       return Swal.fire({
-        title: "Mauvaise réponse",
+        title: "Mauvaise réponse !",
         icon: "error",
         confirmButtonText: "Ok",
       });
     };
-    ifValid("blue", "white", "red");
+    ifValid("blue", "white", "red", "france");
     event.preventDefault();
   }
 
@@ -58,7 +63,7 @@ class Form extends React.Component {
           </form>
         </div>
         <div id="App-Validate">
-          <h3>Nombres de drapeaux trouvés: </h3>
+          <h3>Nombres de drapeaux trouvés:</h3>
         </div>
       </div>
     );
